@@ -1,5 +1,13 @@
 <?php
 
+namespace App\php_interface\include;
+
+
+define('IBLOCK_CATALOG_ID', 2);
+define('MAX_COUNT', 2);
+
+use CIBlockElement;
+
 class ShowCounterEventHandler
 {
     public static function OnBeforeIBlockElementUpdateHandler(&$arFields)

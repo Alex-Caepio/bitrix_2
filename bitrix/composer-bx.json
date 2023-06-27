@@ -1,5 +1,4 @@
 {
   "require-dev": {
-    "symfony/console": "4.1.*"
   }
 }

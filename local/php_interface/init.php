@@ -1,10 +1,13 @@
 <?php
 
-if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/events.php"))
-    require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/events.php");
+namespace App\php_interface;
 
-if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/const.php"))
-    require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/const.php");
 
-AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", array("ShowCounterEventHandler", "OnBeforeIBlockElementUpdateHandler"));
+use App\php_interface\include\ShowCounterEventHandler;
+
+if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/bitrix/vendor/autoload.php"))
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/vendor/autoload.php");
+
+AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", array(ShowCounterEventHandler::class, "OnBeforeIBlockElementUpdateHandler"));
+
 
